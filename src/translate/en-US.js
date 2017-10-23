@@ -2,7 +2,7 @@ module.exports={
   'likes':'{likes, plural, ' +
             '=0 {no likes}' +
             '=1 { # like}' +
-  'other {# likes}}',
+            'other {# likes}}',
   'logout': 'Logout',
   'english': 'English',
   'spanish': 'Spanish',

@@ -65,7 +65,7 @@ app.post('/api/pictures', function (rep, res) {
     res.status(200).send("file Uploaded")
   })
 })
-app.get('/api/user/:usarname', function (req, res) {
+app.get('/api/user/:username', function (req, res) {
     const user = {
       username: 'joel',
       avatar:'https://pbs.twimg.com/profile_images/831993825635745796/HnVmB0-k.jpg',
@@ -100,7 +100,11 @@ app.get('/api/user/:usarname', function (req, res) {
 })
 
 app.get('/:username', function (req, res) {
-  res.render('index',{title: `Platzigram - ${req.params.usarname}`})
+  res.render('index',{title: `Platzigram - ${req.params.username}`})
+})
+
+app.get('/:username/:id', function (req, res) {
+  res.render('index',{title: `Platzigram - ${req.params.username}`})
 })
 
 app.listen(3000,function (err) {

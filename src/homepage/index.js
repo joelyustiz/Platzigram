@@ -5,10 +5,19 @@ const title = require('title');
 const request = require('superagent');
 const header = require('../header');
 const axios = require('axios');
+const webcam = require('webcamjs');
 page('/', header, loading, loadPictures, function (ctx, next) {
   title('Platzigram')
   const main = document.getElementById('main-container');
-      empty(main).appendChild(template(ctx.pictures))
+      empty(main).appendChild(template(ctx.pictures));
+      $('.modal').modal({
+        ready: function (modal, trigger) {
+          webcam.attach('#camara-input');
+        },
+        complete:function () {
+          webcam.reset()
+        }
+      })
 })
 
 // function loadPictures(ctx, next) {
